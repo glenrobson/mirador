@@ -302,11 +302,12 @@
         //add rich text editor
         tinymce.init({
                   selector : 'form.annotation-tooltip textarea',
-                  plugins: "image link media",
+                  plugins: "bor_markup",
+                  content_css: 'mirador/css/bor.css',
                   menubar: false,
                   statusbar: false,
                   toolbar_items_size: 'small',
-                  toolbar: "bold italic | bullist numlist | link image media"
+                  toolbar: "rank | name | ship | place | service"
                 });
     },
     

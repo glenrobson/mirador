@@ -88,7 +88,7 @@ module.exports = function(grunt) {
         dest: distribution
       },
       css: {
-        src: [
+        src: [        
         'css/normalize.css',
         'css/font-awesome.css',
         'css/jquery-ui.custom.min.css',
@@ -118,10 +118,13 @@ module.exports = function(grunt) {
         dest: minified
       }
     },
-
+    
     copy: {
       main: {
-        files: [{
+        files: [{          
+          src: 'css/bor.css',
+          dest: 'build/mirador/'
+        }, {
           expand: true,
           src: 'css/images/**',
           dest: 'build/mirador/'

@@ -176,11 +176,12 @@
                 
                 tinymce.init({
                   selector : 'form.annotation-tooltip textarea',
-                  plugins: "image link media",
+                  plugins: "bor_markup",
                   menubar: false,
                   statusbar: false,
                   toolbar_items_size: 'small',
-                  toolbar: "bold italic | bullist numlist | link image media"
+                  content_css: 'mirador/css/bor.css',
+                  toolbar: "rank | name | ship | place | service"
                 });
                       
                 jQuery('.annotation-tooltip').on("submit", function(event) {
