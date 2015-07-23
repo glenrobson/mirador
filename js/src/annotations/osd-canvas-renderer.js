@@ -307,6 +307,7 @@
                   menubar: false,
                   statusbar: false,
                   toolbar_items_size: 'small',
+						extended_valid_elements : "span[property|class],p[resource|typeof]",
                   toolbar: "rank | name | ship | place | service"
                 });
     },
