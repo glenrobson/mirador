@@ -22,3 +22,55 @@ span.service {
 	color: brown;
 	font-weight: bold;
 }
+
+/*
+span.rank:before {
+    color: red;
+	content: '[rank:';
+}
+
+span.rank:after { 
+    color: red;
+	content: ']';
+}
+
+span.name:before {
+    color: black;
+	content: '[name:';
+}
+
+span.name:after { 
+    color: black;
+	content: ']';
+}
+
+span.ship:before {
+    color: green;
+	content: '[ship:';
+}
+
+span.ship:after { 
+    color: green;
+	content: ']';
+}
+
+span.place:before {
+    color: blue;
+	content: '[place:';
+}
+
+span.place:after { 
+    color: blue;
+	content: ']';
+}
+
+span.service:before {
+    color: brown;
+	content: '[service:';
+}
+
+span.service:after { 
+    color: brown;
+	content: ']';
+}
+*/

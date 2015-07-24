@@ -14,58 +14,161 @@
 /**
  * Example plugin that adds a toolbar button and menu item.
  */
-tinymce.PluginManager.add('bor_markup', function(editor, url) {
-	// Add a button for rank
-	editor.addButton('rank', {
-		text: 'rank',
-		icon: false,
-		onclick: function() {
-			selection = tinyMCE.activeEditor.selection.getContent();
+tinymce.PluginManager.add('bor_markup', function (editor, url) {
+    // Add a button for rank
+    editor.addButton('rank', {
+        text: 'rank',
+        icon: false,
+        onPostRender: function () {
+            var button = this;
+            editor.on('NodeChange', function (e) {
+                if (editor.formatter.match('rank')) {
+                    button.active(true);
+                } else {
+                    button.active(false);
+                }
+            });
+        },
+        onclick: function () {
+            selection = tinyMCE.activeEditor.selection.getContent();
+            node = tinymce.activeEditor.selection.getNode();
+            nodeName = node.nodeName;
 
-			tinyMCE.activeEditor.selection.setContent('<span property="ns:rank" class="rank">' + selection 	+ '</span>'); 
-		}
-	}
-	)
-	editor.addButton('name', {
-		text: 'name',
-		icon: false,
-		onclick: function() {
-			selection = tinyMCE.activeEditor.selection.getContent();
+            if (nodeName != 'SPAN'|| (nodeName == 'SPAN' && tinyMCE.activeEditor.dom.getAttrib(node, 'id') == '_mce_caret')) {
+                tinymce.activeEditor.formatter.toggle('rank');
+                this.active(!this.active());
+            } else if (tinyMCE.activeEditor.dom.getAttrib(node, 'class') == 'rank') {
+                tinymce.activeEditor.formatter.toggle('rank');
+                this.active(false);
+            } else {
+                tinyMCE.activeEditor.dom.setAttrib(node, 'property', 'ns:rank');
+                tinyMCE.activeEditor.dom.setAttrib(node, 'class', 'rank');
+                this.active(true);
+            }
+        }
+    })
+    editor.addButton('name', {
+        text: 'name',
+        icon: false,
+        onPostRender: function () {
+            var button = this;
+            editor.on('NodeChange', function (e) {
+                if (editor.formatter.match('name')) {
+                    button.active(true);
+                } else {
+                    button.active(false);
+                }
+            });
+        },
+        onclick: function () {
+            selection = tinyMCE.activeEditor.selection.getContent();
+            node = tinymce.activeEditor.selection.getNode();
+            nodeName = node.nodeName;
 
-			tinyMCE.activeEditor.selection.setContent('<span property="ns:name" class="name">' + selection 	+ '</span>'); 
-		}
-	}
-	)
-	editor.addButton('ship', {
-		text: 'ship',
-		icon: false,
-		onclick: function() {
-			selection = tinyMCE.activeEditor.selection.getContent();
+            if (nodeName != 'SPAN' || (nodeName == 'SPAN' && tinyMCE.activeEditor.dom.getAttrib(node, 'id') == '_mce_caret')) {
+                tinymce.activeEditor.formatter.toggle('name');
+                this.active(!this.active());
+            } else if (tinyMCE.activeEditor.dom.getAttrib(node, 'class') == 'name') {
+                tinymce.activeEditor.formatter.toggle('name');
+                this.active(false);
+            } else {
+                tinyMCE.activeEditor.dom.setAttrib(node, 'property', 'ns:name');
+                tinyMCE.activeEditor.dom.setAttrib(node, 'class', 'name');
+                this.active(true);
+            }
+        }
+    })
+    editor.addButton('ship', {
+        text: 'ship',
+        icon: false,
+        onPostRender: function () {
+            var button = this;
+            editor.on('NodeChange', function (e) {
+                if (editor.formatter.match('ship')) {
+                    button.active(true);
+                } else {
+                    button.active(false);
+                }
+            });
+        },
+        onclick: function () {
+            selection = tinyMCE.activeEditor.selection.getContent();
+            node = tinymce.activeEditor.selection.getNode();
+            nodeName = node.nodeName;
 
-			tinyMCE.activeEditor.selection.setContent('<span property="ns:ship" class="ship">' + selection 	+ '</span>'); 
-		}
-	}
-	)
-	editor.addButton('place', {
-		text: 'place',
-		icon: false,
-		onclick: function() {
-			selection = tinyMCE.activeEditor.selection.getContent();
+            if (nodeName != 'SPAN' || (nodeName == 'SPAN' && tinyMCE.activeEditor.dom.getAttrib(node, 'id') == '_mce_caret')) {
+                tinymce.activeEditor.formatter.toggle('ship');
+                this.active(!this.active());
+            } else if (tinyMCE.activeEditor.dom.getAttrib(node, 'class') == 'ship') {
+                tinymce.activeEditor.formatter.toggle('ship');
+                this.active(false);
+            } else {
+                tinyMCE.activeEditor.dom.setAttrib(node, 'property', 'ns:ship');
+                tinyMCE.activeEditor.dom.setAttrib(node, 'class', 'ship');
+                this.active(true);
+            }
+        }
+    })
+    editor.addButton('place', {
+        text: 'place',
+        icon: false,
+        onPostRender: function () {
+            var button = this;
+            editor.on('NodeChange', function (e) {
+                if (editor.formatter.match('place')) {
+                    button.active(true);
+                } else {
+                    button.active(false);
+                }
+            });
+        },
+        onclick: function () {
+            selection = tinyMCE.activeEditor.selection.getContent();
+            node = tinymce.activeEditor.selection.getNode();
+            nodeName = node.nodeName;
 
-			tinyMCE.activeEditor.selection.setContent('<span property="ns:place" class="place">' + selection 	+ '</span>'); 
-		}
-	}
-	)
-	editor.addButton('service', {
-		text: 'service',
-		icon: false,
-		onclick: function() {
-			selection = tinyMCE.activeEditor.selection.getContent();
+            if (nodeName != 'SPAN' || (nodeName == 'SPAN' && tinyMCE.activeEditor.dom.getAttrib(node, 'id') == '_mce_caret')) {
+                tinymce.activeEditor.formatter.toggle('place');
+                this.active(!this.active());
+            } else if (tinyMCE.activeEditor.dom.getAttrib(node, 'class') == 'place') {
+                tinymce.activeEditor.formatter.toggle('place');
+                this.active(false);
+            } else {
+                tinyMCE.activeEditor.dom.setAttrib(node, 'property', 'ns:place');
+                tinyMCE.activeEditor.dom.setAttrib(node, 'class', 'place');
+                this.active(true);
+            }
+        }
+    })
+    editor.addButton('service', {
+        text: 'service',
+        icon: false,
+        onPostRender: function () {
+            var button = this;
+            editor.on('NodeChange', function (e) {
+                if (editor.formatter.match('service')) {
+                    button.active(true);
+                } else {
+                    button.active(false);
+                }
+            });
+        },
+        onclick: function () {
+            selection = tinyMCE.activeEditor.selection.getContent();
+            node = tinymce.activeEditor.selection.getNode();
+            nodeName = node.nodeName;
 
-			tinyMCE.activeEditor.selection.setContent('<span property="ns:service" class="service">' + selection 	+ '</span>'); 
-		}
-	}
-	)
-
+            if (nodeName != 'SPAN' || (nodeName == 'SPAN' && tinyMCE.activeEditor.dom.getAttrib(node, 'id') == '_mce_caret')) {
+                tinymce.activeEditor.formatter.toggle('service');
+                this.active(!this.active());
+            } else if (tinyMCE.activeEditor.dom.getAttrib(node, 'class') == 'service') {
+                tinymce.activeEditor.formatter.toggle('service');
+                this.active(false);
+            } else {
+                tinyMCE.activeEditor.dom.setAttrib(node, 'property', 'ns:service');
+                tinyMCE.activeEditor.dom.setAttrib(node, 'class', 'service');
+                this.active(true);
+            }
+        }
+    })    
 });
-

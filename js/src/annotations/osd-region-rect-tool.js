@@ -181,7 +181,14 @@
                   statusbar: false,
                   toolbar_items_size: 'small',
                   content_css: 'mirador/css/bor.css',
-                  toolbar: "rank | name | ship | place | service"
+                  toolbar: "rank | name | ship | place | service",
+                  formats: {
+                    rank: {inline: 'span', style:{color: "red"}, attributes: {property: "ns:rank", class: "rank"}},
+                    name: {inline: 'span', style:{color: "yellow"}, attributes: {property: "ns:name", class: "name"}},
+                    ship: {inline: 'span', style:{color: "green"}, attributes: {property: "ns:ship", class: "ship"}},
+                    place: {inline: 'span', style:{color: "blue"}, attributes: {property: "ns:place", class: "place"}},
+                    service: {inline: 'span', style:{color: "brown"}, attributes: {property: "ns:service", class: "service"}}
+                  }
                 });
                       
                 jQuery('.annotation-tooltip').on("submit", function(event) {
