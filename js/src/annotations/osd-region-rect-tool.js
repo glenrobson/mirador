@@ -180,6 +180,7 @@
                   menubar: false,
                   statusbar: false,
                   toolbar_items_size: 'small',
+						extended_valid_elements : "span[property|class],p[resource|typeof]",
                   content_css: 'mirador/css/bor.css',
                   toolbar: "rank | name | ship | place | service",
                   formats: {
