@@ -34,15 +34,17 @@ tinymce.PluginManager.add('bor_markup', function (editor, url) {
             node = tinymce.activeEditor.selection.getNode();
             nodeName = node.nodeName;
 
-            if (nodeName != 'SPAN'|| (nodeName == 'SPAN' && tinyMCE.activeEditor.dom.getAttrib(node, 'id') == '_mce_caret')) {
+            if (nodeName !== 'SPAN'|| (nodeName === 'SPAN' && tinyMCE.activeEditor.dom.getAttrib(node, 'id') === '_mce_caret')) {
                 tinymce.activeEditor.formatter.toggle('rank');
-                this.active(!this.active());
-            } else if (tinyMCE.activeEditor.dom.getAttrib(node, 'class') == 'rank') {
+                tinymce.activeEditor.theme.panel.find('toolbar *').active(false);
+                this.active(true);
+            } else if (tinyMCE.activeEditor.dom.getAttrib(node, 'class') === 'rank') {
                 tinymce.activeEditor.formatter.toggle('rank');
                 this.active(false);
             } else {
                 tinyMCE.activeEditor.dom.setAttrib(node, 'property', 'ns:rank');
                 tinyMCE.activeEditor.dom.setAttrib(node, 'class', 'rank');
+                tinymce.activeEditor.theme.panel.find('toolbar *').active(false);
                 this.active(true);
             }
         }
@@ -65,15 +67,17 @@ tinymce.PluginManager.add('bor_markup', function (editor, url) {
             node = tinymce.activeEditor.selection.getNode();
             nodeName = node.nodeName;
 
-            if (nodeName != 'SPAN' || (nodeName == 'SPAN' && tinyMCE.activeEditor.dom.getAttrib(node, 'id') == '_mce_caret')) {
+            if (nodeName !== 'SPAN' || (nodeName === 'SPAN' && tinyMCE.activeEditor.dom.getAttrib(node, 'id') === '_mce_caret')) {
                 tinymce.activeEditor.formatter.toggle('name');
-                this.active(!this.active());
-            } else if (tinyMCE.activeEditor.dom.getAttrib(node, 'class') == 'name') {
+                tinymce.activeEditor.theme.panel.find('toolbar *').active(false);
+                this.active(true);
+            } else if (tinyMCE.activeEditor.dom.getAttrib(node, 'class') === 'name') {
                 tinymce.activeEditor.formatter.toggle('name');
                 this.active(false);
             } else {
                 tinyMCE.activeEditor.dom.setAttrib(node, 'property', 'ns:name');
                 tinyMCE.activeEditor.dom.setAttrib(node, 'class', 'name');
+                tinymce.activeEditor.theme.panel.find('toolbar *').active(false);
                 this.active(true);
             }
         }
@@ -96,15 +100,17 @@ tinymce.PluginManager.add('bor_markup', function (editor, url) {
             node = tinymce.activeEditor.selection.getNode();
             nodeName = node.nodeName;
 
-            if (nodeName != 'SPAN' || (nodeName == 'SPAN' && tinyMCE.activeEditor.dom.getAttrib(node, 'id') == '_mce_caret')) {
+            if (nodeName !== 'SPAN' || (nodeName === 'SPAN' && tinyMCE.activeEditor.dom.getAttrib(node, 'id') === '_mce_caret')) {
                 tinymce.activeEditor.formatter.toggle('ship');
-                this.active(!this.active());
-            } else if (tinyMCE.activeEditor.dom.getAttrib(node, 'class') == 'ship') {
+                tinymce.activeEditor.theme.panel.find('toolbar *').active(false);
+                this.active(true);
+            } else if (tinyMCE.activeEditor.dom.getAttrib(node, 'class') === 'ship') {
                 tinymce.activeEditor.formatter.toggle('ship');
                 this.active(false);
             } else {
                 tinyMCE.activeEditor.dom.setAttrib(node, 'property', 'ns:ship');
                 tinyMCE.activeEditor.dom.setAttrib(node, 'class', 'ship');
+                tinymce.activeEditor.theme.panel.find('toolbar *').active(false);
                 this.active(true);
             }
         }
@@ -127,15 +133,17 @@ tinymce.PluginManager.add('bor_markup', function (editor, url) {
             node = tinymce.activeEditor.selection.getNode();
             nodeName = node.nodeName;
 
-            if (nodeName != 'SPAN' || (nodeName == 'SPAN' && tinyMCE.activeEditor.dom.getAttrib(node, 'id') == '_mce_caret')) {
+            if (nodeName !== 'SPAN' || (nodeName === 'SPAN' && tinyMCE.activeEditor.dom.getAttrib(node, 'id') === '_mce_caret')) {
                 tinymce.activeEditor.formatter.toggle('place');
-                this.active(!this.active());
-            } else if (tinyMCE.activeEditor.dom.getAttrib(node, 'class') == 'place') {
+                tinymce.activeEditor.theme.panel.find('toolbar *').active(false);
+                this.active(true);
+            } else if (tinyMCE.activeEditor.dom.getAttrib(node, 'class') === 'place') {
                 tinymce.activeEditor.formatter.toggle('place');
                 this.active(false);
             } else {
                 tinyMCE.activeEditor.dom.setAttrib(node, 'property', 'ns:place');
                 tinyMCE.activeEditor.dom.setAttrib(node, 'class', 'place');
+                tinymce.activeEditor.theme.panel.find('toolbar *').active(false);
                 this.active(true);
             }
         }
@@ -158,15 +166,17 @@ tinymce.PluginManager.add('bor_markup', function (editor, url) {
             node = tinymce.activeEditor.selection.getNode();
             nodeName = node.nodeName;
 
-            if (nodeName != 'SPAN' || (nodeName == 'SPAN' && tinyMCE.activeEditor.dom.getAttrib(node, 'id') == '_mce_caret')) {
+            if (nodeName !== 'SPAN' || (nodeName === 'SPAN' && tinyMCE.activeEditor.dom.getAttrib(node, 'id') === '_mce_caret')) {
                 tinymce.activeEditor.formatter.toggle('service');
-                this.active(!this.active());
-            } else if (tinyMCE.activeEditor.dom.getAttrib(node, 'class') == 'service') {
+                tinymce.activeEditor.theme.panel.find('toolbar *').active(false);
+                this.active(true);
+            } else if (tinyMCE.activeEditor.dom.getAttrib(node, 'class') === 'service') {
                 tinymce.activeEditor.formatter.toggle('service');
                 this.active(false);
             } else {
                 tinyMCE.activeEditor.dom.setAttrib(node, 'property', 'ns:service');
                 tinyMCE.activeEditor.dom.setAttrib(node, 'class', 'service');
+                tinymce.activeEditor.theme.panel.find('toolbar *').active(false);
                 this.active(true);
             }
         }
