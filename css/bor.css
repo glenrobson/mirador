@@ -1,9 +1,9 @@
-span.rank { 
+span.rank {
 	color: red;
 	font-weight: bold;
 }
 
-span.name { 
+span.name {
 	color: black;
 	font-weight: bold;
 }
@@ -22,14 +22,17 @@ span.service {
 	color: brown;
 	font-weight: bold;
 }
-
+span.heading { 
+	color: red;
+	font-weight: bold;
+}
 /*
 span.rank:before {
     color: red;
 	content: '[rank:';
 }
 
-span.rank:after { 
+span.rank:after {
     color: red;
 	content: ']';
 }
@@ -39,7 +42,7 @@ span.name:before {
 	content: '[name:';
 }
 
-span.name:after { 
+span.name:after {
     color: black;
 	content: ']';
 }
@@ -49,7 +52,7 @@ span.ship:before {
 	content: '[ship:';
 }
 
-span.ship:after { 
+span.ship:after {
     color: green;
 	content: ']';
 }
@@ -59,7 +62,7 @@ span.place:before {
 	content: '[place:';
 }
 
-span.place:after { 
+span.place:after {
     color: blue;
 	content: ']';
 }
@@ -69,7 +72,7 @@ span.service:before {
 	content: '[service:';
 }
 
-span.service:after { 
+span.service:after {
     color: brown;
 	content: ']';
 }

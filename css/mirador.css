@@ -4,7 +4,7 @@ a {
 }
 
 /* jquery-ui-dialog theming/customisation (overrides to reset neutral defaults)
----------------------------------------------------------------------------- 
+----------------------------------------------------------------------------
  */
   .ui-dialog-titlebar {
     display:none;
@@ -19,7 +19,7 @@ a {
 
 /*----------------------------------------------------------------------------
 /* Mirador styles
----------------------------------------------------------------------------- 
+----------------------------------------------------------------------------
  */
 
   .mirador-viewer, .mirador-main-menu-bar, .mirador-status-bar {
@@ -171,7 +171,7 @@ a {
 }
 
 
-/* main menu select menu 
+/* main menu select menu
 ---------------------------------------------------------------------------- */
   #manifest-select-menu, #workspace-select-menu, #workspaceContainer {
     position: absolute;
@@ -820,7 +820,7 @@ li.highlight {
 
 /* Canvas HUD
 ----------------------- */
-  .mirador-canvas-hud { 
+  .mirador-canvas-hud {
     position:absolute;
     left: 0;
     top:0;
@@ -1132,7 +1132,7 @@ text {
 }
 .annotation, .osd-select-rectangle {
   border: 2px solid deepSkyBlue;
-  box-shadow: 0px 0px 5px white; 
+  box-shadow: 0px 0px 5px white;
   box-sizing: border-box;
 }
 .annotation.selected {
@@ -1450,14 +1450,14 @@ ul.dropdown {
   margin:0;
   cursor: pointer;
   box-sizing: border-box;
-  background-color: #dddddd;  
+  background-color: #dddddd;
   padding: 10px;
   width:100%;
   text-align:left;
 }
 .dropdown li:hover {
   border-left: 3px solid deepskyblue;
-  background-color: #dddddd;  
+  background-color: #dddddd;
   padding-left: 7px;
   font-weight: bold;
 }
@@ -1509,8 +1509,8 @@ div.manifest-info a.mirador-btn.mirador-icon-toc {
   color: black;
 }
 
-.mirador-viewer a.mirador-icon-image-view.selected, 
-.mirador-viewer a.mirador-icon-thumbs-view.selected, 
+.mirador-viewer a.mirador-icon-image-view.selected,
+.mirador-viewer a.mirador-icon-thumbs-view.selected,
 .mirador-viewer a.mirador-icon-toc.selected,
 .mirador-viewer a.mirador-icon-metadata-view.selected {
   color: black;
@@ -1539,7 +1539,7 @@ div.manifest-info a.mirador-btn.mirador-icon-toc {
   overflow: auto;
 }
 .annotation-tooltip {
-  padding: 7px; 
+  padding: 7px;
 }
 .annotation-display {
   position:relative;
@@ -1604,7 +1604,7 @@ div.manifest-info a.mirador-btn.mirador-icon-toc {
   color: #222;
   border-radius: 6px;
   padding: 0 5px;
-  margin-right:5px; 
+  margin-right:5px;
   margin-bottom: 5px;
   text-align: center;
   font-size: 12;
@@ -1618,7 +1618,7 @@ div.manifest-info a.mirador-btn.mirador-icon-toc {
 
 /* NLW Book of Peace
 ---------------------------------------------------------------------------- */
-span.rank { 
+span.rank {
 	color: red;
 	font-weight: bold;
 }
@@ -1628,12 +1628,12 @@ span.rank:before {
 	content: '<rank>';
 }
 
-span.rank:after { 
+span.rank:after {
     color: red;
 	content: '</rank>';
 }
 */
-span.name { 
+span.name {
 	color: black;
 	font-weight: bold;
 }
@@ -1643,7 +1643,7 @@ span.name:before {
 	content: '<name>';
 }
 
-span.name:after { 
+span.name:after {
     color: black;
 	content: '</name>';
 }
@@ -1658,7 +1658,7 @@ span.ship:before {
 	content: '<ship>';
 }
 
-span.ship:after { 
+span.ship:after {
     color: green;
 	content: '</ship>';
 }
@@ -1673,7 +1673,7 @@ span.place:before {
 	content: '<place>';
 }
 
-span.place:after { 
+span.place:after {
     color: blue;
 	content: '</place>';
 }
@@ -1688,8 +1688,12 @@ span.service:before {
 	content: '<service>';
 }
 
-span.service:after { 
+span.service:after {
     color: brown;
 	content: '</service>';
 }
 */
+span.heading {
+	color: red;
+	font-weight: bold;
+}

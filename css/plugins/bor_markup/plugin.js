@@ -17,8 +17,10 @@
 tinymce.PluginManager.add('bor_markup', function (editor, url) {
     // Add a button for rank
     editor.addButton('rank', {
-        text: 'rank',
-        icon: false,
+      text: 'Rank',
+      tooltip: 'Highlight Rank',
+      icon: false,
+      style:'color:red;',
         onPostRender: function () {
             var button = this;
             editor.on('NodeChange', function (e) {
@@ -180,5 +182,40 @@ tinymce.PluginManager.add('bor_markup', function (editor, url) {
                 this.active(true);
             }
         }
-    })    
+    })
+    editor.addButton('heading', {
+      text: 'heading',
+      tooltip: 'Highlight heading',
+      icon: false,
+      style:'color:red;',
+        onPostRender: function () {
+            var button = this;
+            editor.on('NodeChange', function (e) {
+                if (editor.formatter.match('heading')) {
+                    button.active(true);
+                } else {
+                    button.active(false);
+                }
+            });
+        },
+        onclick: function () {
+            selection = tinyMCE.activeEditor.selection.getContent();
+            node = tinymce.activeEditor.selection.getNode();
+            nodeName = node.nodeName;
+
+            if (nodeName !== 'SPAN' || (nodeName === 'SPAN' && tinyMCE.activeEditor.dom.getAttrib(node, 'id') === '_mce_caret')) {
+                tinymce.activeEditor.formatter.toggle('heading');
+                tinymce.activeEditor.theme.panel.find('toolbar *').active(false);
+                this.active(true);
+            } else if (tinyMCE.activeEditor.dom.getAttrib(node, 'class') === 'heading') {
+                tinymce.activeEditor.formatter.toggle('heading');
+                this.active(false);
+            } else {
+                tinyMCE.activeEditor.dom.setAttrib(node, 'property', 'ns:heading');
+                tinyMCE.activeEditor.dom.setAttrib(node, 'class', 'heading');
+                tinymce.activeEditor.theme.panel.find('toolbar *').active(false);
+                this.active(true);
+            }
+        }
+    })
 });
