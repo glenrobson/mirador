@@ -20,7 +20,7 @@
     bindEvents: function() {
       var _this = this;
     },
-    
+
     getEditor: function(annotation) {
       var annoText,
       tags = [],
@@ -87,7 +87,7 @@
         });
       });
 
-      var template = this.viewerTemplate({annotations : htmlAnnotations});      
+      var template = this.viewerTemplate({annotations : htmlAnnotations});
       return template;
       //return combination of all of them
     },
@@ -96,7 +96,7 @@
     editorTemplate: Handlebars.compile([
                                        '<form class="annotation-editor annotation-tooltip" {{#if id}}data-anno-id="{{id}}"{{/if}}>',
                                        '<textarea class="text-editor" placeholder="{{t "comments"}}…">{{#if content}}{{content}}{{/if}}</textarea>',
-                                       '<input class="tags-editor" placeholder="{{t "addTagsHere"}}…" {{#if tags}}value="{{tags}}"{{/if}}>',
+                                       //'<input class="tags-editor" placeholder="{{t "addTagsHere"}}…" {{#if tags}}value="{{tags}}"{{/if}}>',
                                        '<div>',
                                        // need to add a delete, if permissions allow
                                        '<div class="button-container">',
@@ -126,7 +126,7 @@
                                        '</div>',
                                        '</div>',
                                        '{{/each}}',
-                                       '</div>'                      
+                                       '</div>'
     ].join(''))
   };
 
