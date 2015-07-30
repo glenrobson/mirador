@@ -213,10 +213,12 @@
                   var tagText = jQuery(this).parents('.annotation-editor').find('.tags-editor').val(),
                   resourceText = tinymce.activeEditor.getContent(),
                   tags = [];
-                  tagText = $.trimString(tagText);
                   if (tagText) {
-                    tags = tagText.split(/\s+/);
-                  }
+							tagText = $.trimString(tagText);
+							if (tagText) {
+							  tags = tagText.split(/\s+/);
+							}
+						}	
 
                   var bounds = _this.osdViewer.viewport.getBounds(true);
                   var scope = _this.osdViewer.viewport.viewportToImageRectangle(bounds);
