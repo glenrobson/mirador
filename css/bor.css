@@ -4,7 +4,7 @@ span.rank {
 }
 
 span.name {
-	color: black;
+	color: darkorange;
 	font-weight: bold;
 }
 
@@ -22,8 +22,19 @@ span.service {
 	color: brown;
 	font-weight: bold;
 }
-span.heading { 
-	color: red;
+
+span.heading {
+	color: aqua;
+	font-weight: bold;
+}
+
+span.bat {
+	color: cadetblue;
+	font-weight: bold;
+}
+
+span.medal {
+	color: darkgreen;
 	font-weight: bold;
 }
 /*

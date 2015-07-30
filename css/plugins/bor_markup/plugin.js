@@ -218,4 +218,74 @@ tinymce.PluginManager.add('bor_markup', function (editor, url) {
             }
         }
     })
+    editor.addButton('battalion', {
+      text: 'bat',
+      tooltip: 'Highlight battalion',
+      icon: false,
+      style:'color:red;',
+        onPostRender: function () {
+            var button = this;
+            editor.on('NodeChange', function (e) {
+                if (editor.formatter.match('bat')) {
+                    button.active(true);
+                } else {
+                    button.active(false);
+                }
+            });
+        },
+        onclick: function () {
+            selection = tinyMCE.activeEditor.selection.getContent();
+            node = tinymce.activeEditor.selection.getNode();
+            nodeName = node.nodeName;
+
+            if (nodeName !== 'SPAN' || (nodeName === 'SPAN' && tinyMCE.activeEditor.dom.getAttrib(node, 'id') === '_mce_caret')) {
+                tinymce.activeEditor.formatter.toggle('bat');
+                tinymce.activeEditor.theme.panel.find('toolbar *').active(false);
+                this.active(true);
+            } else if (tinyMCE.activeEditor.dom.getAttrib(node, 'class') === 'bat') {
+                tinymce.activeEditor.formatter.toggle('bat');
+                this.active(false);
+            } else {
+                tinyMCE.activeEditor.dom.setAttrib(node, 'property', 'ns:bat');
+                tinyMCE.activeEditor.dom.setAttrib(node, 'class', 'bat');
+                tinymce.activeEditor.theme.panel.find('toolbar *').active(false);
+                this.active(true);
+            }
+        }
+    })
+    editor.addButton('medal', {
+      text: 'medal',
+      tooltip: 'Highlight medal',
+      icon: false,
+      style:'color:red;',
+        onPostRender: function () {
+            var button = this;
+            editor.on('NodeChange', function (e) {
+                if (editor.formatter.match('medal')) {
+                    button.active(true);
+                } else {
+                    button.active(false);
+                }
+            });
+        },
+        onclick: function () {
+            selection = tinyMCE.activeEditor.selection.getContent();
+            node = tinymce.activeEditor.selection.getNode();
+            nodeName = node.nodeName;
+
+            if (nodeName !== 'SPAN' || (nodeName === 'SPAN' && tinyMCE.activeEditor.dom.getAttrib(node, 'id') === '_mce_caret')) {
+                tinymce.activeEditor.formatter.toggle('medal');
+                tinymce.activeEditor.theme.panel.find('toolbar *').active(false);
+                this.active(true);
+            } else if (tinyMCE.activeEditor.dom.getAttrib(node, 'class') === 'medal') {
+                tinymce.activeEditor.formatter.toggle('medal');
+                this.active(false);
+            } else {
+                tinyMCE.activeEditor.dom.setAttrib(node, 'property', 'ns:medal');
+                tinyMCE.activeEditor.dom.setAttrib(node, 'class', 'medal');
+                tinymce.activeEditor.theme.panel.find('toolbar *').active(false);
+                this.active(true);
+            }
+        }
+    })
 });
