@@ -17,7 +17,7 @@
 tinymce.PluginManager.add('bor_markup', function (editor, url) {
     // Add a button for rank
     editor.addButton('rank', {
-      text: 'Rank',
+      text: 'rank',
       tooltip: 'Highlight Rank',
       icon: false,
       style:'color:red;',

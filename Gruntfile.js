@@ -13,7 +13,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-coveralls');
   grunt.loadNpmTasks('grunt-karma');
-  grunt.loadNpmTasks('grunt-githooks');
+  //grunt.loadNpmTasks('grunt-githooks');
   // grunt.loadNpmTasks('jasmine-jquery');
 
   // ----------
@@ -88,7 +88,7 @@ module.exports = function(grunt) {
         dest: distribution
       },
       css: {
-        src: [        
+        src: [
         'css/normalize.css',
         'css/font-awesome.css',
         'css/jquery-ui.custom.min.css',
@@ -118,10 +118,10 @@ module.exports = function(grunt) {
         dest: minified
       }
     },
-    
+
     copy: {
       main: {
-        files: [{          
+        files: [{
           src: 'css/bor.css',
           dest: 'build/mirador/'
         }, {
@@ -154,11 +154,11 @@ module.exports = function(grunt) {
         }, {
           src: 'js/lib/parse.min.js',
           dest: 'build/mirador/parse.min.js'
-        }, {	    
+        }, {
           src: 'js/lib/ZeroClipboard.swf',
           dest: 'build/mirador/ZeroClipboard.swf'
         }, {
-	  expand: true,	    
+	  expand: true,
           src: 'locales/**',
           dest: 'build/mirador'
         }]
@@ -196,8 +196,8 @@ module.exports = function(grunt) {
 
     watch: {
       all: {
-        options: { 
-          livereload: true 
+        options: {
+          livereload: true
         },
         files: [
           'Gruntfile.js',
@@ -234,12 +234,12 @@ module.exports = function(grunt) {
       }
     },
 
-    githooks: {
-      all: {
-        'pre-commit': 'jshint cover'
-        // 'post-checkout': 
-      }
-    },
+    //githooks: {
+    //  all: {
+        //'pre-commit': 'jshint cover'
+        // 'post-checkout':
+    //  }
+    //},
 
     coveralls: {
       options: {
@@ -340,7 +340,7 @@ module.exports = function(grunt) {
       browsers: {
         reporters: ['spec', 'saucelabs'],
         browsers: [
-          'sl_win7_chrome', 
+          'sl_win7_chrome',
           'sl_win7_firefox',
           // 'sl_win7_ie9',
           // 'sl_win7_ie10',
@@ -403,7 +403,7 @@ module.exports = function(grunt) {
   // Coverage task.
   // Runs instanbul coverage
   grunt.registerTask('cover', 'karma:cover');
-  
+
   // ----------
   // Runs this on travis.
   grunt.registerTask('ci', [
