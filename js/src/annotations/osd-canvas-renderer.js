@@ -310,7 +310,7 @@
 						      extended_valid_elements : "span[property|class],p[resource|typeof]",
                   toolbar: "heading | rank | name | place | unit | ship | medal |",
                   formats: {
-                    heading: {inline: 'span', style:{color: "lime"}, attributes: {property: "ns:heading", class: "heading"}},
+                    heading: {inline: 'span', style:{color: "cadetblue"}, attributes: {property: "ns:heading", class: "heading"}},
                     rank: {inline: 'span', style:{color: "red"}, attributes: {property: "ns:rank", class: "rank"}},
                     name: {inline: 'span', style:{color: "black"}, attributes: {property: "ns:name", class: "name"}},
                     place: {inline: 'span', style:{color: "brown"}, attributes: {property: "ns:place", class: "place"}},
