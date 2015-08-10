@@ -1,90 +1,33 @@
+/* NLW Book of Peace - These styles are used by tinymce to style the markup
+   when in editor mode. Preview styles are in mirador.css
+---------------------------------------------------------------------------- */
+span.heading {
+	color: cadetblue;
+	font-weight: bold;
+}
 span.rank {
 	color: red;
 	font-weight: bold;
 }
 
 span.name {
+	color: black;
+	font-weight: bold;
+}
+span.place {
+	color: brown;
+	font-weight: bold;
+}
+span.unit {
 	color: darkorange;
 	font-weight: bold;
 }
 
 span.ship {
-	color: green;
-	font-weight: bold;
-}
-
-span.place {
 	color: blue;
 	font-weight: bold;
 }
-
-span.service {
-	color: brown;
-	font-weight: bold;
-}
-
-span.heading {
-	color: aqua;
-	font-weight: bold;
-}
-
-span.bat {
-	color: cadetblue;
-	font-weight: bold;
-}
-
 span.medal {
-	color: darkgreen;
+	color: goldenrod;
 	font-weight: bold;
 }
-/*
-span.rank:before {
-    color: red;
-	content: '[rank:';
-}
-
-span.rank:after {
-    color: red;
-	content: ']';
-}
-
-span.name:before {
-    color: black;
-	content: '[name:';
-}
-
-span.name:after {
-    color: black;
-	content: ']';
-}
-
-span.ship:before {
-    color: green;
-	content: '[ship:';
-}
-
-span.ship:after {
-    color: green;
-	content: ']';
-}
-
-span.place:before {
-    color: blue;
-	content: '[place:';
-}
-
-span.place:after {
-    color: blue;
-	content: ']';
-}
-
-span.service:before {
-    color: brown;
-	content: '[service:';
-}
-
-span.service:after {
-    color: brown;
-	content: ']';
-}
-*/

@@ -20,7 +20,7 @@ tinymce.PluginManager.add('bor_markup', function (editor, url) {
       text: 'rank',
       tooltip: 'Highlight Rank',
       icon: false,
-      style:'color:red;',
+      classes:'rank-button btn',
         onPostRender: function () {
             var button = this;
             editor.on('NodeChange', function (e) {
@@ -53,7 +53,9 @@ tinymce.PluginManager.add('bor_markup', function (editor, url) {
     })
     editor.addButton('name', {
         text: 'name',
+        tooltip: 'Highlight Name',
         icon: false,
+        classes:'name-button btn',
         onPostRender: function () {
             var button = this;
             editor.on('NodeChange', function (e) {
@@ -86,7 +88,9 @@ tinymce.PluginManager.add('bor_markup', function (editor, url) {
     })
     editor.addButton('ship', {
         text: 'ship',
+        tooltip: 'Highlight ship name',
         icon: false,
+        classes:'ship-button btn',
         onPostRender: function () {
             var button = this;
             editor.on('NodeChange', function (e) {
@@ -119,7 +123,9 @@ tinymce.PluginManager.add('bor_markup', function (editor, url) {
     })
     editor.addButton('place', {
         text: 'place',
+        tooltip: 'Highlight placename',
         icon: false,
+        classes:'place-button btn',
         onPostRender: function () {
             var button = this;
             editor.on('NodeChange', function (e) {
@@ -150,13 +156,15 @@ tinymce.PluginManager.add('bor_markup', function (editor, url) {
             }
         }
     })
-    editor.addButton('service', {
-        text: 'service',
+    editor.addButton('unit', {
+        text: 'unit',
+        tooltip: 'Highlight regiment, batt, div, unit etc',
         icon: false,
+        classes:'unit-button btn',
         onPostRender: function () {
             var button = this;
             editor.on('NodeChange', function (e) {
-                if (editor.formatter.match('service')) {
+                if (editor.formatter.match('unit')) {
                     button.active(true);
                 } else {
                     button.active(false);
@@ -169,15 +177,15 @@ tinymce.PluginManager.add('bor_markup', function (editor, url) {
             nodeName = node.nodeName;
 
             if (nodeName !== 'SPAN' || (nodeName === 'SPAN' && tinyMCE.activeEditor.dom.getAttrib(node, 'id') === '_mce_caret')) {
-                tinymce.activeEditor.formatter.toggle('service');
+                tinymce.activeEditor.formatter.toggle('unit');
                 tinymce.activeEditor.theme.panel.find('toolbar *').active(false);
                 this.active(true);
-            } else if (tinyMCE.activeEditor.dom.getAttrib(node, 'class') === 'service') {
-                tinymce.activeEditor.formatter.toggle('service');
+            } else if (tinyMCE.activeEditor.dom.getAttrib(node, 'class') === 'unit') {
+                tinymce.activeEditor.formatter.toggle('unit');
                 this.active(false);
             } else {
-                tinyMCE.activeEditor.dom.setAttrib(node, 'property', 'ns:service');
-                tinyMCE.activeEditor.dom.setAttrib(node, 'class', 'service');
+                tinyMCE.activeEditor.dom.setAttrib(node, 'property', 'ns:unit');
+                tinyMCE.activeEditor.dom.setAttrib(node, 'class', 'unit');
                 tinymce.activeEditor.theme.panel.find('toolbar *').active(false);
                 this.active(true);
             }
@@ -187,7 +195,7 @@ tinymce.PluginManager.add('bor_markup', function (editor, url) {
       text: 'heading',
       tooltip: 'Highlight heading',
       icon: false,
-      style:'color:red;',
+      classes: 'heading-button btn',
         onPostRender: function () {
             var button = this;
             editor.on('NodeChange', function (e) {
@@ -218,46 +226,11 @@ tinymce.PluginManager.add('bor_markup', function (editor, url) {
             }
         }
     })
-    editor.addButton('battalion', {
-      text: 'bat',
-      tooltip: 'Highlight battalion',
-      icon: false,
-      style:'color:red;',
-        onPostRender: function () {
-            var button = this;
-            editor.on('NodeChange', function (e) {
-                if (editor.formatter.match('bat')) {
-                    button.active(true);
-                } else {
-                    button.active(false);
-                }
-            });
-        },
-        onclick: function () {
-            selection = tinyMCE.activeEditor.selection.getContent();
-            node = tinymce.activeEditor.selection.getNode();
-            nodeName = node.nodeName;
-
-            if (nodeName !== 'SPAN' || (nodeName === 'SPAN' && tinyMCE.activeEditor.dom.getAttrib(node, 'id') === '_mce_caret')) {
-                tinymce.activeEditor.formatter.toggle('bat');
-                tinymce.activeEditor.theme.panel.find('toolbar *').active(false);
-                this.active(true);
-            } else if (tinyMCE.activeEditor.dom.getAttrib(node, 'class') === 'bat') {
-                tinymce.activeEditor.formatter.toggle('bat');
-                this.active(false);
-            } else {
-                tinyMCE.activeEditor.dom.setAttrib(node, 'property', 'ns:bat');
-                tinyMCE.activeEditor.dom.setAttrib(node, 'class', 'bat');
-                tinymce.activeEditor.theme.panel.find('toolbar *').active(false);
-                this.active(true);
-            }
-        }
-    })
     editor.addButton('medal', {
       text: 'medal',
       tooltip: 'Highlight medal',
       icon: false,
-      style:'color:red;',
+      classes: 'medal-button btn',
         onPostRender: function () {
             var button = this;
             editor.on('NodeChange', function (e) {
