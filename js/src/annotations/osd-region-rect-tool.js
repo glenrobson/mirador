@@ -182,16 +182,15 @@
                   toolbar_items_size: 'small',
 						      extended_valid_elements : "span[property|class],p[resource|typeof]",
                   content_css: 'mirador/css/bor.css',
-                  toolbar: "heading | rank | name | place | service | bat | ship | medal |",
+                  toolbar: "heading | rank | name | place | unit | ship | medal |",
                   formats: {
-                    heading: {inline: 'span', style:{color: "aqua"}, attributes: {property: "ns:heading", class: "heading"}},
+                    heading: {inline: 'span', style:{color: "cadetblue"}, attributes: {property: "ns:heading", class: "heading"}},
                     rank: {inline: 'span', style:{color: "red"}, attributes: {property: "ns:rank", class: "rank"}},
-                    name: {inline: 'span', style:{color: "darkorange"}, attributes: {property: "ns:name", class: "name"}},
-                    place: {inline: 'span', style:{color: "blue"}, attributes: {property: "ns:place", class: "place"}},
-                    service: {inline: 'span', style:{color: "brown"}, attributes: {property: "ns:service", class: "service"}},
-                    bat: {inline: 'span', style:{color: "cadetblue"}, attributes: {property: "ns:service", class: "bat"}},
-                    ship: {inline: 'span', style:{color: "green"}, attributes: {property: "ns:ship", class: "ship"}},
-                    medal: {inline: 'span', style:{color: "darkgreen"}, attributes: {property: "ns:service", class: "medal"}}
+                    name: {inline: 'span', style:{color: "black"}, attributes: {property: "ns:name", class: "name"}},
+                    place: {inline: 'span', style:{color: "brown"}, attributes: {property: "ns:place", class: "place"}},
+                    unit: {inline: 'span', style:{color: "darkorange"}, attributes: {property: "ns:unit", class: "unit"}},
+                    ship: {inline: 'span', style:{color: "blue"}, attributes: {property: "ns:ship", class: "ship"}},
+                    medal: {inline: 'span', style:{color: "goldenrod"}, attributes: {property: "ns:medal", class: "medal"}}
                   }
                 });
 
@@ -218,7 +217,7 @@
 							if (tagText) {
 							  tags = tagText.split(/\s+/);
 							}
-						}	
+						}
 
                   var bounds = _this.osdViewer.viewport.getBounds(true);
                   var scope = _this.osdViewer.viewport.viewportToImageRectangle(bounds);
