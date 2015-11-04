@@ -22,7 +22,7 @@
         'optionsPanelVisible': false,
         'bookmarkPanelVisible': false
       },
-      manifests:             [] 
+      manifests:             []
     }, $.DEFAULT_SETTINGS, options);
 
     // get initial manifests
@@ -40,8 +40,8 @@
       // retrieve manifests
       this.getManifestsData();
 
-      //initialize i18next  
-      i18n.init({debug: false, getAsync: false, resGetPath: 'build/mirador/locales/__lng__/__ns__.json'}); 
+      //initialize i18next
+      i18n.init({debug: false, getAsync: false, resGetPath: 'mirador/locales/__lng__/__ns__.json'}); 
 
       //register Handlebars helper
       Handlebars.registerHelper('t', function(i18n_key) {
@@ -76,11 +76,11 @@
       // add workspace configuration
       this.layout = typeof this.layout !== 'string' ? JSON.stringify(this.layout) : this.layout;
       this.workspace = new $.Workspace({
-        layoutDescription: this.layout.charAt(0) === '{' ? JSON.parse(this.layout) : $.layoutDescriptionFromGridString(this.layout), 
-        parent: this, 
+        layoutDescription: this.layout.charAt(0) === '{' ? JSON.parse(this.layout) : $.layoutDescriptionFromGridString(this.layout),
+        parent: this,
         appendTo: this.element.find('.mirador-viewer')
       });
-      
+
       this.workspacePanel = new $.WorkspacePanel({
         appendTo: this.element.find('.mirador-viewer'),
         parent: this,
@@ -89,7 +89,7 @@
         preserveWindows: this.workspacePanelSettings.preserveWindows,
         workspace: this.workspace
       });
-      
+
       this.manifestsPanel = new $.ManifestsPanel({ parent: this, appendTo: this.element.find('.mirador-viewer') });
 
       this.bookmarkPanel = new $.BookmarkPanel({ parent: this, appendTo: this.element.find('.mirador-viewer') });
