@@ -174,6 +174,7 @@
                 //disable all tooltips for overlays
                 jQuery.publish('disableTooltips.'+parent.windowId);
 
+                var tinylang = window.i18n.lng();
                 tinymce.init({
                   selector : 'form.annotation-tooltip textarea',
                   plugins: "bor_markup",
@@ -182,6 +183,7 @@
                   toolbar_items_size: 'small',
 						      extended_valid_elements : "span[property|class],p[resource|typeof]",
                   content_css: 'mirador/css/bor.css',
+                  language: tinylang,
                   toolbar: "heading | rank | name | place | unit | ship | medal |",
                   formats: {
                     heading: {inline: 'span', style:{color: "cadetblue"}, attributes: {property: "ns:heading", class: "heading"}},

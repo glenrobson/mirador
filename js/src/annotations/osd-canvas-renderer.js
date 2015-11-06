@@ -300,12 +300,14 @@
         api.set({'content.text' : annoTooltip.getEditor(oaAnno),
         'hide.event' : false});
         //add rich text editor
+        var tinylang = window.i18n.lng();
         tinymce.init({
                   selector : 'form.annotation-tooltip textarea',
                   plugins: "bor_markup",
                   content_css: 'mirador/css/bor.css',
                   menubar: false,
                   statusbar: false,
+                  language: tinylang,
                   toolbar_items_size: 'small',
 						      extended_valid_elements : "span[property|class],p[resource|typeof]",
                   toolbar: "heading | rank | name | place | unit | ship | medal |",
