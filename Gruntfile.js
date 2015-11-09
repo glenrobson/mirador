@@ -145,6 +145,11 @@ module.exports = function(grunt) {
           dest: 'build/mirador'
         }, {
           expand: true,
+          cwd: 'css/',
+          src: 'langs/**',
+          dest: 'build/mirador'
+        }, {
+          expand: true,
           src: 'images/**',
           dest: 'build/mirador'
         }, {
