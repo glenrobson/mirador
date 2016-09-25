@@ -435,6 +435,8 @@
             tags = tagText.split(/\s+/);
         }
 
+		  oaAnno.on.within=_this.parent.parent.manifest.uri;
+
         var bounds = _this.osdViewer.viewport.getBounds(true);
         // var scope = _this.osdViewer.viewport.viewportToImageRectangle(bounds);
         //bounds is giving negative values?

@@ -332,6 +332,7 @@
                   motivation.push("oa:commenting");
                   on = { "@type" : "oa:SpecificResource",
                   "full" : parent.parent.canvasID,
+						"within":_this.parent.parent.manifest.uri,
                   "selector" : {
                     "@type" : "oa:FragmentSelector",
                     "value" : "xywh="+canvasRect.x+","+canvasRect.y+","+canvasRect.width+","+canvasRect.height
