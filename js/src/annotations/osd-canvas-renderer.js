@@ -336,13 +336,13 @@
         'hide.event' : false});
         jQuery.publish('annotationEditorAvailable.'+this.parent.windowId);
         //add rich text editor
+		  // plugins: "image link media",
         tinymce.init({
                   selector : 'form.annotation-tooltip textarea',
-                  plugins: "image link media",
                   menubar: false,
                   statusbar: false,
                   toolbar_items_size: 'small',
-                  toolbar: "bold italic | bullist numlist | link image media | removeformat",
+                  toolbar: false,
                   setup : function(editor) {
                     editor.on('init', function(args) {
                       tinymce.execCommand('mceFocus', false, args.target.id); //make sure tinymce focuses on the editor after initialization                    

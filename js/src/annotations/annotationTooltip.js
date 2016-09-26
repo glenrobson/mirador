@@ -40,6 +40,12 @@
           annoText = annotation.resource.chars;
         }
       }
+	 Handlebars.registerHelper('select', function( selected, options ){
+      //  var $el = $('<select />').html( options.fn(this) );
+      //  $el.find('[value="' + value + '"]').attr({'selected':'selected'});
+      //  return $el.html();
+		return options.fn(this).replace( new RegExp(' value=\"' + selected + '\"'), '$& selected="selected"');
+    });
 
       return this.editorTemplate({content : annoText,
         tags : tags.join(" "),
@@ -98,11 +104,26 @@
       //return combination of all of them
     },
 
-    //when this is being used to edit an existing annotation, insert them into the inputs
+
+		//when this is being used to edit an existing annotation, insert them into the inputs gmr
     editorTemplate: Handlebars.compile([
                                        '<form id="annotation-editor-{{windowId}}" class="annotation-editor annotation-tooltip" {{#if id}}data-anno-id="{{id}}"{{/if}}>',
+													'Field:',
+													'<select name="tags-editor-{{windowId}}" class="tags-editor">',
+													'{{#select tags}}',
+														'<option value="number">No.</option>',
+														'<option value="studentName">Name of Student</option>',
+														'<option value="age">Age</option>',
+														'<option value="FarthersDetails">Father’s name, quality and address</option>',
+														'<option value="LastSchool">Name of last School or College</option>',
+														'<option value="Testimonial">From whom receiving Testimonial</option>',
+														'<option value="Exams">Public Examinations already passed</option>',
+														'<option value="AdmissionDate">Date of Admission</option>',
+														'<option value="UniAddress">Aberystwyth address</option>',
+													'{{/select}}',	
+													'</select>',
                                        '<textarea class="text-editor" placeholder="{{t "comments"}}…">{{#if content}}{{content}}{{/if}}</textarea>',
-                                       '<input id="tags-editor-{{windowId}}" class="tags-editor" placeholder="{{t "addTagsHere"}}…" {{#if tags}}value="{{tags}}"{{/if}}>',
+                                       //'<input id="tags-editor-{{windowId}}" class="tags-editor" placeholder="{{t "addTagsHere"}}…" {{#if tags}}value="{{tags}}"{{/if}}>',
                                        '<div>',
                                        // need to add a delete, if permissions allow
                                        '<div class="button-container">',
@@ -121,16 +142,16 @@
                                          '{{#if showUpdate}}<a href="#edit" class="edit"><i class="fa fa-pencil-square-o fa-fw"></i>{{t "edit"}}</a>{{/if}}',
                                          '{{#if showDelete}}<a href="#delete" class="delete"><i class="fa fa-trash-o fa-fw"></i>{{t "delete"}}</a>{{/if}}',
                                        '</div>',
-                                       '<div class="text-viewer">',
-                                       '{{#if username}}<p class="user">{{username}}:</p>{{/if}}',
-                                       '<p>{{{annoText}}}</p>',
-                                       '</div>',
-                                       '<div id="tags-viewer-{{windowId}}" class="tags-viewer">',
+													'<div id="tags-viewer-{{windowId}}" class="tags-viewer">',
                                        '{{#each tags}}',
                                        '<span class="tag">{{this}}</span>',
                                        '{{/each}}',
                                        '</div>',
+                                       '<div class="text-viewer">',
+                                       '{{#if username}}<p class="user">{{username}}:</p>{{/if}}',
+                                       '<p>{{{annoText}}}</p>',
                                        '</div>',
+                                        '</div>',
                                        '{{/each}}',
                                        '</div>'                      
     ].join(''))

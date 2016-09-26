@@ -265,13 +265,14 @@
 
                 var selector = '#annotation-editor-'+parent.windowId;
 
+                 // plugins: "image link media",
+					  // "bold italic | bullist numlist | link image media | removeformat",
                 tinymce.init({
                   selector : selector+' textarea',
-                  plugins: "image link media",
                   menubar: false,
                   statusbar: false,
                   toolbar_items_size: 'small',
-                  toolbar: "bold italic | bullist numlist | link image media | removeformat",
+                  toolbar: false,
                   setup : function(editor) {
                     editor.on('init', function(args) {
                       tinymce.execCommand('mceFocus', false, args.target.id); //make sure tinymce focuses on the editor after initialization                    
