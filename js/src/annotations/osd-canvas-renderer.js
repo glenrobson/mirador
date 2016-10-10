@@ -443,6 +443,8 @@
                   
         var motivation = [],
         resource = [];
+
+		  oaAnno.on.within=_this.parent.parent.manifest.uri;
                   
         //remove all tag-related content in annotation
         oaAnno.motivation = jQuery.grep(oaAnno.motivation, function(value) {
