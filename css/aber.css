@@ -1,0 +1,11 @@
+/* 
+ Aber Uni customisations
+*/
+
+.crosshair {
+	cursor: crosshair;
+}
+
+.mirador-osd-edit-mode.selected {
+  color: red;
+}

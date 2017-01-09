@@ -210,6 +210,7 @@
             function enableEditingAnnotations() {
               _this.parent.element.find('.mirador-osd-edit-mode').addClass("selected");
               jQuery.publish('modeChange.' + _this.windowId, 'editingAnnotations');
+              _this.parent.element.find('.openseadragon-canvas').addClass("crosshair");
             }
             if (_this.annoEndpointAvailable) {
               if (from === "annoOff") {
@@ -235,6 +236,7 @@
           },
           oncreateOff: function(event, from, to) { 
             _this.parent.element.find('.mirador-osd-edit-mode').removeClass("selected");
+				_this.parent.element.find('.openseadragon-canvas').removeClass("crosshair");
             jQuery.publish('modeChange.' + _this.windowId, 'displayAnnotations');
             jQuery.publish(('windowUpdated'), {
               id: _this.windowId,
@@ -302,7 +304,7 @@
                                  '{{/if}}',
                                  '{{#if showAnno}}',
                                  '<a class="mirador-osd-annotations-layer hud-control " role="button" aria-label="Toggle annotations">',
-                                 '<i class="fa fa-lg fa-comments"></i>',
+                                 '<i class="fa fa-2x fa-comments"></i>',
                                  '</a>',
                                  '{{/if}}',
                                  '{{#if showNextPrev}}',

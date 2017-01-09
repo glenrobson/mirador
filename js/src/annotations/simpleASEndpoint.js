@@ -52,7 +52,7 @@
           'admin':  [this.userid]
         }
       };
-      this.search({ uri: this.uri });
+      //this.search({ uri: this.uri });
     },
 
     //Search endpoint for all annotations with a given URI
@@ -88,7 +88,8 @@
             _this.dfd.resolve(false);
           }
         },
-        error: function() {
+			 error: function(xhr, statusText, err) { 
+			 console.log('failed to search ' + _this.url + ' due to ' + statusText);
           if (typeof errorCallback === "function") {
             errorCallback();
           } else {
