@@ -41,7 +41,7 @@
       sidePanel: null, //the actual module for the side panel
       sidePanelAvailable: true,
       sidePanelOptions: {
-        "toc" : true,
+        "toc" : false,
         "annotations" : false
       },
       sidePanelVisible: true,
@@ -64,10 +64,10 @@
       layoutOptions : {
         "newObject" : true,
         "close" : true,
-        "slotRight" : true,
-        "slotLeft" : true,
-        "slotAbove" : true,
-        "slotBelow" : true
+        "slotRight" : false,
+        "slotLeft" : false,
+        "slotAbove" : false,
+        "slotBelow" :false 
       }
     }, options);
 
