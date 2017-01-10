@@ -246,6 +246,7 @@
           ondisplayOff: function(event, from, to) { 
             if (_this.annoEndpointAvailable) {
               _this.parent.element.find('.mirador-osd-edit-mode').removeClass("selected");
+				  _this.parent.element.find('.openseadragon-canvas').removeClass("crosshair");
               _this.contextControls.hide(function() {
                 _this.parent.element.find('.mirador-osd-annotations-layer').fadeIn(duration);
               }
